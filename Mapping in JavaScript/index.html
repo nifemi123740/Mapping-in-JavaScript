@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapping in JavaScript</title>
+</head>
+<body>
+    <p>Ascending and Decending for mapped numbers</p>
+    <p>Numbers before added by 10 are: 25, 15, 19, 94</p>
+    <p id="product_value"></p>
+    <button onclick="ascending()">Ascending order</button>
+    <button onclick="decending()">Descending order</button>
+    <script>
+        var numbers = [25, 15, 19, 94];
+        function myFunction(num){
+            return num + 10;
+        }
+        var newarray = numbers.map(myFunction);
+        document.getElementById("product_value").innerHTML = "The Mapped value are: " +newarray;
+        function ascending() {
+            newarray.sort(function (a, b){return a - b});
+            document.getElementById("product_value").innerHTML = "The ascending order of mapped value are: " +newarray;
+        }
+        function decending(){
+            newarray.sort(function (a, b){return b - a});
+            document.getElementById("product_value").innerHTML = "The decending order of mapped value are: " +newarray;
+        }
+    </script>
+</body>
+</html>
